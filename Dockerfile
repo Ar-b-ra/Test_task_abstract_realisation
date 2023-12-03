@@ -18,5 +18,5 @@ WORKDIR /Test_task_abstract_realisation
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt \
 ENV STORAGE_TYPE=posgres
-
+ENV URL=localhost:1234
 CMD [ "python3", "main.py" ]
