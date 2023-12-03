@@ -1,18 +1,16 @@
-import asyncio
-from abc import ABC, ABCMeta
+from abc import ABCMeta, abstractmethod
 
-from va_bas import Event, Metric
+from va_bas import Event
 
 
 class AbstractStorage(metaclass=ABCMeta):
     def __init__(self, url: str):
         self.url = url
 
+    @abstractmethod
     def connect(self):
         pass
 
-    async def send_event(self, event: Event):
-        pass
-
-    async def send_metric(self, metric: Metric):
+    @abstractmethod
+    async def send_aggregated_events(self, event: Event):
         pass
