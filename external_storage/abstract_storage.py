@@ -4,7 +4,7 @@ from abc import ABC, ABCMeta
 from va_bas import Event, Metric
 
 
-class BaseBroker(metaclass=ABCMeta):
+class AbstractStorage(metaclass=ABCMeta):
     def __init__(self, url: str):
         self.url = url
 
