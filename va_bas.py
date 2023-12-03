@@ -42,3 +42,9 @@ class VaBus:
 
     async def send_metric(self, metric: Metric):
         pass
+
+    async def get_event(self, name: str) -> Event:
+        pass
+
+    async def get_metric(self, name: str) -> Metric:
+        pass
