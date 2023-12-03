@@ -12,7 +12,7 @@ class PostgresStorage(AbstractStorage):
     def connect(self):
         print(f"Connected to {self.url} with login = {self.login} and password = {self.password}")
 
-    def send_aggregated_events(self, event: AggEvent):
+    async def send_aggregated_events(self, event: AggEvent):
         print(f"Send {event = } to postgres")
 
     def disconnect(self):
