@@ -1,7 +1,7 @@
 from kafka import KafkaConsumer, KafkaProducer
 
+from aggregator import AggEvent
 from external_storage.abstract_storage import AbstractStorage
-from va_bas import Event
 
 
 class KafkaStorage(AbstractStorage):
@@ -14,5 +14,8 @@ class KafkaStorage(AbstractStorage):
     def connect(self):
         print("Connected to Kafka")
 
-    async def send_aggregated_events(self, event: Event):
+    def disconnect(self):
+        print("Disconnected from Kafka")
+
+    async def send_aggregated_events(self, event: AggEvent):
         print(f"Send {event = } to kafka")

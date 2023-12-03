@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-from va_bas import Event
+from aggregator import AggEvent
 
 
 class AbstractStorage(metaclass=ABCMeta):
@@ -12,5 +12,9 @@ class AbstractStorage(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    async def send_aggregated_events(self, event: Event):
+    def disconnect(self):
+        pass
+
+    @abstractmethod
+    async def send_aggregated_events(self, event: AggEvent):
         pass

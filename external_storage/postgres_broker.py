@@ -1,5 +1,5 @@
+from aggregator import AggEvent
 from external_storage.abstract_storage import AbstractStorage
-from va_bas import Event
 
 
 class PostgresStorage(AbstractStorage):
@@ -12,5 +12,8 @@ class PostgresStorage(AbstractStorage):
     def connect(self):
         print(f"Connected to {self.url} with login = {self.login} and password = {self.password}")
 
-    def send_aggregated_events(self, event: Event):
+    def send_aggregated_events(self, event: AggEvent):
         print(f"Send {event = } to postgres")
+
+    def disconnect(self):
+        print("Disconnected from Postgres")
