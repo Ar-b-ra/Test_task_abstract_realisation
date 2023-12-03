@@ -6,7 +6,7 @@ from external_storage.postgres_broker import PostgresStorage
 from va_bas import VaBus, Event
 
 if __name__ == "__main__":
-    storage_type = os.environ.get("PLACE_TO_SEND", "postgres")  # or kafka
+    storage_type = os.environ.get("STORAGE_TYPE", "postgres")  # or kafka
     agr_time = os.environ.get("AGR_TIME")  # time from env (?)
     url = os.environ.get("URL")
     if storage_type == "postgres":
